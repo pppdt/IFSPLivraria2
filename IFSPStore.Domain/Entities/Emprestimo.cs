@@ -1,5 +1,5 @@
 ﻿using IFSPLivraria.Domain.Base;
-
+using System.Text.Json.Serialization;
 
 namespace IFSPLivraria.Domain.Entities
 {
@@ -31,7 +31,7 @@ namespace IFSPLivraria.Domain.Entities
 
             }
 
-            Emprestimo_Livro(int id, Livro? livro, int quantidade, Emprestimo? emprestimo) : base(id)
+            public Emprestimo_Livro(int id, Livro? livro, int quantidade, Emprestimo? emprestimo) : base(id)
             {
                 Livro = livro;
                 Quantidade = quantidade;
@@ -40,6 +40,7 @@ namespace IFSPLivraria.Domain.Entities
 
             public Livro? Livro { get; set; }
             public int Quantidade { get; set; }
+            [JsonIgnore]
             public Emprestimo? Emprestimo {get; set;}
         }
 

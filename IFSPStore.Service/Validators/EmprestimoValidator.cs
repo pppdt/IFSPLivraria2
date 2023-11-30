@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
+using IFSPLivraria.Domain.Entities;
 
-namespace IFSPStore.Service.Validators
+
+namespace IFSPLivraria.Service.Validators
 {
-    internal class EmprestimoValidator
-    {
+    public class EmprestimoValidator 
+    { 
     }
 }
+   

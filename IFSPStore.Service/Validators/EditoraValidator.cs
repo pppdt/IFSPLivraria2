@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
+using IFSPLivraria.Domain.Entities;
+using System.Text.RegularExpressions;
 
-namespace IFSPStore.Service.Validators
+namespace IFSPLivraria.Service.Validators
 {
-    internal class EditoraValidator
+    public class EditoraValidator : AbstractValidator<Editora>
     {
+        public EditoraValidator()
+        {
+            RuleFor(c => c.Nome)
+                .NotEmpty().WithMessage("Por favor informe o nome.")
+                .NotNull().WithMessage("Por favor informe o nome.");
+        }
     }
 }

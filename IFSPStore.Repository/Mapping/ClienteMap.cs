@@ -27,7 +27,7 @@ namespace IFSPLivraria.Repository.Mapping
             builder.Property(prop => prop.Bairro)
                 .IsRequired()
                 .HasColumnType("varchar(100)");
-
+            //chave
             builder.HasOne(prop => prop.Cidade);
 
         }
