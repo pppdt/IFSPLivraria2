@@ -15,4 +15,10 @@
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IFSPStore.Domain\IFSPLivraria.Domain.csproj" />
+    <ProjectReference Include="..\IFSPStore.Repository\IFSPLivraria.Repository.csproj" />
+    <ProjectReference Include="..\IFSPStore.Service\IFSPLivraria.Service.csproj" />
+  </ItemGroup>
+
 </Project>

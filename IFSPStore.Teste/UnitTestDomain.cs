@@ -1,14 +1,11 @@
 ﻿using System.Text.Json;
-using System.Text.RegularExpressions;
 using IFSPLivraria.Domain.Entities;
-using NuGet.Frameworks;
-
 
 namespace IFSPLivraria.Teste
 {
     [TestClass]
     public class UnitTestDomain
-    {/*
+    {
         [TestMethod]
         public void TestCidade()
         {
@@ -63,7 +60,7 @@ namespace IFSPLivraria.Teste
 
 
         }
-        */
+       
         [TestMethod]
         public void TesteLivro()
         {
@@ -86,12 +83,11 @@ namespace IFSPLivraria.Teste
             var emprestimo = new Emprestimo();
             var emprestimo_livro = new Emprestimo_Livro();
 
-
-            var produto = new Produto();
-            var grupo = new Grupo();
-
-            var cidade = new Cidade();
+            var cidade = new Cidade(); 
             var cliente = new Cliente();
+
+            var editora = new Editora();
+            var livro = new Livro();
 
             cidade.Nome = "Batatais";
             cidade.Estado = "SP";
@@ -100,38 +96,34 @@ namespace IFSPLivraria.Teste
             cliente.Cidade = cidade;
             cliente.Bairro = "Centro";
             cliente.Endereco = "Rua Teste";
+            cliente.Documento = "4852542";
 
-            grupo.Nome = "Alimentos";
+            editora.Nome = "Shazam";
 
-            produto.Nome = "Arroz";
-            produto.UnidadeVenda = "BRI";
-            produto.Quantidade = 2;
-            produto.Grupo = grupo;
+            livro.Titulo = "cronicas de narnia";
+            livro.Autor = "Bru";
+            livro.AnoProducao = "2015";
 
-            venda.Cliente = cliente;
-            venda.Data = DateTime.Today;
+            emprestimo.DataEmprestimo = DateTime.Today;
+            emprestimo.DataDevolucao = new DateTime(2023, 12, 07, 12, 15, 10);
 
-            Console.WriteLine(JsonSerializer.Serialize(venda));
-            Assert.AreEqual(venda.Cliente, cliente);
-            Assert.AreEqual(venda.Data, DateTime.Today);
+            Console.WriteLine(JsonSerializer.Serialize(emprestimo));
+           // Assert.AreEqual(emprestimo.Cliente, cliente);
+            Assert.AreEqual(emprestimo.DataEmprestimo, DateTime.Today);
+            Assert.AreEqual(emprestimo.DataDevolucao, DateTime.Today);
 
+            emprestimo_livro.Quantidade = 1;
+            emprestimo_livro.Emprestimo = emprestimo;
+            emprestimo_livro.Livro = livro;
 
-            vendaItem.Quantidade = 2;
-            vendaItem.Produto = produto;
-            vendaItem.ValorUnitario = 5;
-            vendaItem.Venda = venda;
+            Console.WriteLine(JsonSerializer.Serialize(emprestimo_livro));
+            Assert.AreEqual(emprestimo_livro.Quantidade, 1);
+            Assert.AreEqual(emprestimo_livro.Emprestimo, emprestimo);
+            Assert.AreEqual(emprestimo_livro.Livro, livro);
 
-            Console.WriteLine(JsonSerializer.Serialize(vendaItem));
-            Assert.AreEqual(vendaItem.Quantidade, 2);
-            Assert.AreEqual(vendaItem.Produto, produto);
-            Assert.AreEqual(vendaItem.ValorUnitario, 5);
-            Assert.AreEqual(vendaItem.Venda, venda);
+            emprestimo.Empl.Add(emprestimo_livro);
+            Console.WriteLine(JsonSerializer.Serialize(emprestimo));
 
-            venda.Items.Add(vendaItem);
-
-
-            Console.WriteLine(JsonSerializer.Serialize(venda));
-            Assert.AreEqual(venda.Items[0].ValorUnitario, vendaItem.ValorUnitario);
 
         }
 

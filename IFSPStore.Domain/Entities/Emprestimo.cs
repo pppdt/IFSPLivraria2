@@ -22,28 +22,28 @@ namespace IFSPLivraria.Domain.Entities
         public DateTime DataEmprestimo { get; set; }
         public DateTime DataDevolucao { get; set; }
         public Cliente? Cliente { get; set; }
-        public List<Emprestimo_Livro> Empl { get; set; }
+        public List<Emprestimo_Livro> Empl { get; set; }     
+    }
 
-        public class Emprestimo_Livro : BaseEntity<int>
+    public class Emprestimo_Livro : BaseEntity<int>
+    {
+        public Emprestimo_Livro()
         {
-            public Emprestimo_Livro()
-            {
 
-            }
-
-            public Emprestimo_Livro(int id, Livro? livro, int quantidade, Emprestimo? emprestimo) : base(id)
-            {
-                Livro = livro;
-                Quantidade = quantidade;
-                Emprestimo = emprestimo;
-            }
-
-            public Livro? Livro { get; set; }
-            public int Quantidade { get; set; }
-            [JsonIgnore]
-            public Emprestimo? Emprestimo {get; set;}
         }
 
+        public Emprestimo_Livro(int id, Livro? livro, int quantidade, Emprestimo? emprestimo) : base(id)
+        {
+            Livro = livro;
+            Quantidade = quantidade;
+            Emprestimo = emprestimo;
+        }
+
+        public Livro? Livro { get; set; }
+        public int Quantidade { get; set; }
+        [JsonIgnore]
+        public Emprestimo? Emprestimo { get; set; }
     }
+
 
 }

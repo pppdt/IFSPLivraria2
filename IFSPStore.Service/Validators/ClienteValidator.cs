@@ -22,6 +22,9 @@ namespace IFSPLivraria.Service.Validators
                 .NotEmpty().WithMessage("Por favor informe a cidade.")
                 .NotNull().WithMessage("Por favor informe a cidade.");
 
+            RuleFor(c => c.Documento)
+               .NotEmpty().WithMessage("Por favor informe o Documento.")
+               .NotNull().WithMessage("Por favor informe o Documento.");
         }
     }
 }
