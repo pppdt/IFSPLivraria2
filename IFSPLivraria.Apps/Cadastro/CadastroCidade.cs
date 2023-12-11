@@ -3,9 +3,6 @@ using IFSPLivraria.Domain.Base;
 using IFSPLivraria.Domain.Entities;
 using IFSPLivraria.Service.Validators;
 
-using ReaLTaiizor.Forms;
-
-
 
 namespace IFSPLivraria.App.Cadastro
 {
@@ -20,14 +17,14 @@ namespace IFSPLivraria.App.Cadastro
             _cidadeService = cidadeService;
             InitializeComponent();
         }
-
         private void PreencheObjeto(Cidade cidade)
         {
             cidade.Nome = txtNome.Text;
             cidade.Estado = cboEstado.Text;
+
         }
 
-        protected override void Salvar()
+             protected override void Salvar()
         {
             try
             {
@@ -82,6 +79,6 @@ namespace IFSPLivraria.App.Cadastro
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             cboEstado.Text = linha?.Cells["Estado"].Value.ToString();
         }
-
     }
+    
 }

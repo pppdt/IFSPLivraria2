@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using IFSPLivraria.Domain.Base;
+using IFSPLivraria.Repository.Context;
+using Microsoft.EntityFrameworkCore;
 
-namespace IFSPLivraria.Service.Services
+namespace IFSPLivraria.Repository.Repository
 {
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : IBaseEntity
     {
@@ -29,6 +31,7 @@ namespace IFSPLivraria.Service.Services
 
             Validate(entity, Activator.CreateInstance<TValidator>());
 
+            _baseRepository.ClearChangeTracker();
             _baseRepository.Insert(entity);
 
             var outputModel = _mapper.Map<TOutputModel>(entity);
@@ -36,7 +39,12 @@ namespace IFSPLivraria.Service.Services
             return outputModel;
         }
 
-        public void Delete(int id) => _baseRepository.Delete(id);
+        public void Delete(int id)
+        {
+
+            _baseRepository.ClearChangeTracker();
+            _baseRepository.Delete(id);
+        }
 
         public IEnumerable<TOutputModel> Get<TOutputModel>(IList<string>? includes = null) where TOutputModel : class
         {
@@ -70,7 +78,7 @@ namespace IFSPLivraria.Service.Services
 
             Validate(entity, Activator.CreateInstance<TValidator>());
 
-            //_baseRepository.ClearChangeTracker();
+            _baseRepository.ClearChangeTracker();
             _baseRepository.Update(entity);
 
             var outputModel = _mapper.Map<TOutputModel>(entity);

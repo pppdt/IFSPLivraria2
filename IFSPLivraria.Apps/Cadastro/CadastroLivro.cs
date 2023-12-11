@@ -29,7 +29,10 @@ namespace IFSPLivraria.App.Cadastro
         }
         private void PreencheObjeto(Livro livro)
         {
-          
+          livro.Titulo = txtTitulo.Text;
+        livro.Autor = txtAutor.Text;
+            livro.AnoProducao = txtAnoProdrucao.Text;
+
 
         }
         protected override void Salvar()
@@ -59,6 +62,33 @@ namespace IFSPLivraria.App.Cadastro
             {
                 MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        protected override void Deletar(int id)
+        {
+            try
+            {
+                _LivroService.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        protected override void CarregaGrid()
+        {
+            livros = _LivroService.Get<Livro>().ToList();
+            dataGridViewConsulta.DataSource = livros;
+            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        protected override void CarregaRegistro(DataGridViewRow? linha)
+        {
+            txtId.Text = linha?.Cells["Id"].Value.ToString();
+            txtAutor.Text = linha?.Cells["Autor"].Value.ToString();
+            txtTitulo.Text = linha?.Cells["TituloLivro"].Value.ToString();
+            txtAnoProdrucao.Text = linha?.Cells["Ano Produção"].Value.ToString();
         }
 
     }

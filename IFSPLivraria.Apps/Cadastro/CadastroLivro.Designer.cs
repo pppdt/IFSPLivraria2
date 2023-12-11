@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtEndereco = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtAutor = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtTitulo = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtAnoProdrucao = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             materialTabControl.SuspendLayout();
@@ -44,11 +44,11 @@
             // 
             tabPageCadastro.Controls.Add(txtAnoProdrucao);
             tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Controls.Add(txtEndereco);
+            tabPageCadastro.Controls.Add(txtAutor);
             tabPageCadastro.Controls.Add(txtTitulo);
             tabPageCadastro.Size = new Size(786, 348);
             tabPageCadastro.Controls.SetChildIndex(txtTitulo, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtEndereco, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtAutor, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(txtAnoProdrucao, 0);
             // 
@@ -87,36 +87,36 @@
             txtId.TrailingIcon = null;
             txtId.UseSystemPasswordChar = false;
             // 
-            // txtEndereco
+            // txtAutor
             // 
-            txtEndereco.AnimateReadOnly = false;
-            txtEndereco.AutoCompleteMode = AutoCompleteMode.None;
-            txtEndereco.AutoCompleteSource = AutoCompleteSource.None;
-            txtEndereco.BackgroundImageLayout = ImageLayout.None;
-            txtEndereco.CharacterCasing = CharacterCasing.Normal;
-            txtEndereco.Depth = 0;
-            txtEndereco.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtEndereco.HideSelection = true;
-            txtEndereco.Hint = "Autor";
-            txtEndereco.LeadingIcon = null;
-            txtEndereco.Location = new Point(23, 77);
-            txtEndereco.MaxLength = 32767;
-            txtEndereco.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtEndereco.Name = "txtEndereco";
-            txtEndereco.PasswordChar = '\0';
-            txtEndereco.PrefixSuffixText = null;
-            txtEndereco.ReadOnly = false;
-            txtEndereco.RightToLeft = RightToLeft.No;
-            txtEndereco.SelectedText = "";
-            txtEndereco.SelectionLength = 0;
-            txtEndereco.SelectionStart = 0;
-            txtEndereco.ShortcutsEnabled = true;
-            txtEndereco.Size = new Size(626, 48);
-            txtEndereco.TabIndex = 16;
-            txtEndereco.TabStop = false;
-            txtEndereco.TextAlign = HorizontalAlignment.Left;
-            txtEndereco.TrailingIcon = null;
-            txtEndereco.UseSystemPasswordChar = false;
+            txtAutor.AnimateReadOnly = false;
+            txtAutor.AutoCompleteMode = AutoCompleteMode.None;
+            txtAutor.AutoCompleteSource = AutoCompleteSource.None;
+            txtAutor.BackgroundImageLayout = ImageLayout.None;
+            txtAutor.CharacterCasing = CharacterCasing.Normal;
+            txtAutor.Depth = 0;
+            txtAutor.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtAutor.HideSelection = true;
+            txtAutor.Hint = "Autor";
+            txtAutor.LeadingIcon = null;
+            txtAutor.Location = new Point(23, 77);
+            txtAutor.MaxLength = 32767;
+            txtAutor.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtAutor.Name = "txtAutor";
+            txtAutor.PasswordChar = '\0';
+            txtAutor.PrefixSuffixText = null;
+            txtAutor.ReadOnly = false;
+            txtAutor.RightToLeft = RightToLeft.No;
+            txtAutor.SelectedText = "";
+            txtAutor.SelectionLength = 0;
+            txtAutor.SelectionStart = 0;
+            txtAutor.ShortcutsEnabled = true;
+            txtAutor.Size = new Size(626, 48);
+            txtAutor.TabIndex = 16;
+            txtAutor.TabStop = false;
+            txtAutor.TextAlign = HorizontalAlignment.Left;
+            txtAutor.TrailingIcon = null;
+            txtAutor.UseSystemPasswordChar = false;
             // 
             // txtTitulo
             // 
@@ -207,7 +207,7 @@
         #endregion
 
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEndereco;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtAutor;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtTitulo;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtAnoProdrucao;
     }

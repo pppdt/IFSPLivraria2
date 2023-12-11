@@ -48,6 +48,7 @@ namespace IFSPLivraria.App.Cadastro
                 var cidade = _cidadeService.GetById<Cidade>(idGrupo);
                 cliente.Cidade = cidade;
             }
+
         }
 
         protected override void Salvar()

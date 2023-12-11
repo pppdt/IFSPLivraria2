@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IFSPStore.Domain\IFSPLivraria.Domain.csproj" />
+    <ProjectReference Include="..\IFSPStore.Repository\IFSPLivraria.Repository.csproj" />
   </ItemGroup>
 
 </Project>

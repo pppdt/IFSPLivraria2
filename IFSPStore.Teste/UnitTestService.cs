@@ -3,7 +3,6 @@ using AutoMapper;
 using IFSPLivraria.Domain.Base;
 using IFSPLivraria.Repository.Context;
 using IFSPLivraria.Repository.Repository;
-using IFSPLivraria.Service.Services;
 using IFSPLivraria.Service.Validators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

@@ -32,6 +32,7 @@
             cADASTROCIDADEToolStripMenuItem = new ToolStripMenuItem();
             cidadeToolStripMenuItem = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
+            cadastrosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             // 
             // cADASTROCIDADEToolStripMenuItem
             // 
-            cADASTROCIDADEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cidadeToolStripMenuItem, clienteToolStripMenuItem });
+            cADASTROCIDADEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cidadeToolStripMenuItem, clienteToolStripMenuItem, cadastrosToolStripMenuItem });
             cADASTROCIDADEToolStripMenuItem.Name = "cADASTROCIDADEToolStripMenuItem";
             cADASTROCIDADEToolStripMenuItem.Size = new Size(71, 20);
             cADASTROCIDADEToolStripMenuItem.Text = "Cadastros";
@@ -63,6 +64,13 @@
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             clienteToolStripMenuItem.Size = new Size(180, 22);
             clienteToolStripMenuItem.Text = "Cliente";
+            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
+            // 
+            // cadastrosToolStripMenuItem
+            // 
+            cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            cadastrosToolStripMenuItem.Size = new Size(180, 22);
+            cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // Principal
             // 
@@ -70,6 +78,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
+            IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Principal";
             Text = "IFSP - Livraria";
@@ -85,5 +94,6 @@
         private ToolStripMenuItem cADASTROCIDADEToolStripMenuItem;
         private ToolStripMenuItem cidadeToolStripMenuItem;
         private ToolStripMenuItem clienteToolStripMenuItem;
+        private ToolStripMenuItem cadastrosToolStripMenuItem;
     }
 }

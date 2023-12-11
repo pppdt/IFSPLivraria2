@@ -1,15 +1,15 @@
-﻿using AutoMapper;
+﻿
+
+
+using AutoMapper;
 using IFSPLivraria.App.Cadastro;
 using IFSPLivraria.App.Models;
 using IFSPLivraria.Domain.Base;
 using IFSPLivraria.Domain.Entities;
 using IFSPLivraria.Repository.Context;
 using IFSPLivraria.Repository.Repository;
-using IFSPLivraria.Service.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-
 
 namespace IFSPLivraria.App.Infra
 {
@@ -22,7 +22,7 @@ namespace IFSPLivraria.App.Infra
         public static void ConfiguraServices()
         {
             Services = new ServiceCollection();
-            var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
+            var strCon = File.ReadAllText("../../../Config/DatabaseSettings.txt");
             Services.AddDbContext<MySqlContext>(options =>
             {
                 options.LogTo(Console.WriteLine)
