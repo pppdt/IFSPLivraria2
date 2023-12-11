@@ -1,6 +1,6 @@
-﻿namespace IFSPLivraria.App
+﻿namespace IFSPLivraria.App.Cadastro
 {
-    partial class FormPrincipal
+    partial class CadastroEditora
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormPrincipal";
+            this.Text = "Cadastro_Editora";
         }
 
         #endregion

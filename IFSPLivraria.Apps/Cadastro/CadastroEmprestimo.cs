@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IFSPLivraria.App
+namespace IFSPLivraria.App.Cadastro
 {
-    public partial class FormPrincipal : Form
+    public partial class CadastroEmprestimo : Form
     {
-        public FormPrincipal()
+        public CadastroEmprestimo()
         {
             InitializeComponent();
         }

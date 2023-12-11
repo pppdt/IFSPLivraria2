@@ -60,7 +60,7 @@
             materialTabControl.Multiline = true;
             materialTabControl.Name = "materialTabControl";
             materialTabControl.SelectedIndex = 0;
-            materialTabControl.Size = new Size(548, 451);
+            materialTabControl.Size = new Size(679, 451);
             materialTabControl.TabIndex = 1;
             // 
             // tabPageCadastro
@@ -69,8 +69,8 @@
             tabPageCadastro.ImageKey = "form.png";
             tabPageCadastro.Location = new Point(4, 31);
             tabPageCadastro.Name = "tabPageCadastro";
-            tabPageCadastro.Padding = new Padding(3, 3, 3, 3);
-            tabPageCadastro.Size = new Size(540, 416);
+            tabPageCadastro.Padding = new Padding(3);
+            tabPageCadastro.Size = new Size(671, 416);
             tabPageCadastro.TabIndex = 0;
             tabPageCadastro.Text = "Cadastro";
             tabPageCadastro.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(3, 365);
             panel1.Name = "panel1";
-            panel1.Size = new Size(534, 48);
+            panel1.Size = new Size(665, 48);
             panel1.TabIndex = 10;
             // 
             // btnCancelar
@@ -94,7 +94,7 @@
             btnCancelar.HighEmphasis = true;
             btnCancelar.Icon = null;
             btnCancelar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnCancelar.Location = new Point(332, 6);
+            btnCancelar.Location = new Point(463, 6);
             btnCancelar.Margin = new Padding(4, 6, 4, 6);
             btnCancelar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnCancelar.Name = "btnCancelar";
@@ -116,7 +116,7 @@
             btnSalvar.HighEmphasis = true;
             btnSalvar.Icon = null;
             btnSalvar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnSalvar.Location = new Point(445, 6);
+            btnSalvar.Location = new Point(576, 6);
             btnSalvar.Margin = new Padding(4, 6, 4, 6);
             btnSalvar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnSalvar.Name = "btnSalvar";
@@ -138,8 +138,8 @@
             tabPageConsulta.ImageKey = "search.png";
             tabPageConsulta.Location = new Point(4, 31);
             tabPageConsulta.Name = "tabPageConsulta";
-            tabPageConsulta.Padding = new Padding(3, 3, 3, 3);
-            tabPageConsulta.Size = new Size(541, 417);
+            tabPageConsulta.Padding = new Padding(3);
+            tabPageConsulta.Size = new Size(540, 416);
             tabPageConsulta.TabIndex = 1;
             tabPageConsulta.Text = "Consulta";
             tabPageConsulta.UseVisualStyleBackColor = true;
@@ -240,7 +240,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(554, 518);
+            ClientSize = new Size(685, 518);
             Controls.Add(materialTabControl);
             DrawerTabControl = materialTabControl;
             Icon = (Icon)resources.GetObject("$this.Icon");
