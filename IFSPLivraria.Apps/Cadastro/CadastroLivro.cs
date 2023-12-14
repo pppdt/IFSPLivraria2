@@ -60,7 +60,7 @@ namespace IFSPLivraria.App.Cadastro
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Livraria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -72,7 +72,7 @@ namespace IFSPLivraria.App.Cadastro
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Livraria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -80,15 +80,15 @@ namespace IFSPLivraria.App.Cadastro
         {
             livros = _LivroService.Get<Livro>().ToList();
             dataGridViewConsulta.DataSource = livros;
-            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewConsulta.Columns["Titulo"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtAutor.Text = linha?.Cells["Autor"].Value.ToString();
-            txtTitulo.Text = linha?.Cells["TituloLivro"].Value.ToString();
-            txtAnoProdrucao.Text = linha?.Cells["Ano Produção"].Value.ToString();
+            txtTitulo.Text = linha?.Cells["Titulo"].Value.ToString();
+            txtAnoProdrucao.Text = linha?.Cells["AnoProducao"].Value.ToString();
         }
 
     }

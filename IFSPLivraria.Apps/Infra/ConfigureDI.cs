@@ -27,8 +27,8 @@ namespace IFSPLivraria.App.Infra
             {
                 options.LogTo(Console.WriteLine)
                     .EnableSensitiveDataLogging();
-                //options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                //options.EnableSensitiveDataLogging();
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                options.EnableSensitiveDataLogging();
 
 
                 options.UseMySql(strCon, ServerVersion.AutoDetect(strCon), opt =>
@@ -56,10 +56,10 @@ namespace IFSPLivraria.App.Infra
 
 
             Services.AddTransient<CadastroCliente, CadastroCliente>();
-           Services.AddTransient<CadastroCidade, CadastroCidade>();
+            Services.AddTransient<CadastroCidade, CadastroCidade>();
             Services.AddTransient<CadastroLivro, CadastroLivro>();
             Services.AddTransient<CadastroEditora, CadastroEditora>();
-            Services.AddTransient<CadastroEmprestimo, CadastroEmprestimo>();
+            //Services.AddTransient<CadastroEmprestimo, CadastroEmprestimo>();
            
 
 

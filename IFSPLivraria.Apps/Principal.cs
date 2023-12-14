@@ -11,26 +11,44 @@ namespace IFSPLivraria.App
         {
             InitializeComponent();
         }
+     
+
+        private void cidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Exibeformulario<CadastroCidade>();
+        }     
 
 
+        
+     
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<CadastroCliente>();
+        }   
+
+        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<CadastroEditora>();
+        }
+
+        private void livroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<CadastroLivro>();
+        }
+        /*
+        private void emprestimoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<cadastrEmprestimo>();
+        }
+
+        */
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.ApplicationExitCall)
             {
                 e.Cancel = true;
             }
-        }
-
-
-
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Exibeformulario<CadastroCliente>();
-        }
-
-        private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Exibeformulario<CadastroCidade>();
         }
 
         private void Exibeformulario<TFormlario>() where TFormlario : Form
@@ -44,5 +62,6 @@ namespace IFSPLivraria.App
             }
         }
 
+     
     }
 }

@@ -28,64 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            cADASTROCIDADEToolStripMenuItem = new ToolStripMenuItem();
-            cidadeToolStripMenuItem = new ToolStripMenuItem();
-            clienteToolStripMenuItem = new ToolStripMenuItem();
-            cadastrosToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
-            SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cADASTROCIDADEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.livroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emprestimoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cADASTROCIDADEToolStripMenuItem });
-            menuStrip1.Location = new Point(3, 64);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(794, 24);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cADASTROCIDADEToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 64);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(794, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // cADASTROCIDADEToolStripMenuItem
             // 
-            cADASTROCIDADEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cidadeToolStripMenuItem, clienteToolStripMenuItem, cadastrosToolStripMenuItem });
-            cADASTROCIDADEToolStripMenuItem.Name = "cADASTROCIDADEToolStripMenuItem";
-            cADASTROCIDADEToolStripMenuItem.Size = new Size(71, 20);
-            cADASTROCIDADEToolStripMenuItem.Text = "Cadastros";
+            this.cADASTROCIDADEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cidadeToolStripMenuItem,
+            this.clienteToolStripMenuItem,
+            this.cadastrosToolStripMenuItem,
+            this.livroToolStripMenuItem,
+            this.emprestimoToolStripMenuItem});
+            this.cADASTROCIDADEToolStripMenuItem.Name = "cADASTROCIDADEToolStripMenuItem";
+            this.cADASTROCIDADEToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.cADASTROCIDADEToolStripMenuItem.Text = "Cadastros";
             // 
             // cidadeToolStripMenuItem
             // 
-            cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            cidadeToolStripMenuItem.Size = new Size(180, 22);
-            cidadeToolStripMenuItem.Text = "Cidade";
-            cidadeToolStripMenuItem.Click += cidadeToolStripMenuItem_Click;
+            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cidadeToolStripMenuItem.Text = "&Cidade";
+            this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click_1);
             // 
             // clienteToolStripMenuItem
             // 
-            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
-            clienteToolStripMenuItem.Text = "Cliente";
-            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clienteToolStripMenuItem.Text = "&Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(180, 22);
-            cadastrosToolStripMenuItem.Text = "Cadastros";
+            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrosToolStripMenuItem.Text = "&Editora";
+            this.cadastrosToolStripMenuItem.Click += new System.EventHandler(this.cadastrosToolStripMenuItem_Click);
+            // 
+            // livroToolStripMenuItem
+            // 
+            this.livroToolStripMenuItem.Name = "livroToolStripMenuItem";
+            this.livroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.livroToolStripMenuItem.Text = "&Livro";
+            this.livroToolStripMenuItem.Click += new System.EventHandler(this.livroToolStripMenuItem_Click);
+            // 
+            // emprestimoToolStripMenuItem
+            // 
+            this.emprestimoToolStripMenuItem.Name = "emprestimoToolStripMenuItem";
+            this.emprestimoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.emprestimoToolStripMenuItem.Text = "&Emprestimo";
             // 
             // Principal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(menuStrip1);
-            IsMdiContainer = true;
-            MainMenuStrip = menuStrip1;
-            Name = "Principal";
-            Text = "IFSP - Livraria";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "IFSP - Livraria";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -95,5 +123,7 @@
         private ToolStripMenuItem cidadeToolStripMenuItem;
         private ToolStripMenuItem clienteToolStripMenuItem;
         private ToolStripMenuItem cadastrosToolStripMenuItem;
+        private ToolStripMenuItem livroToolStripMenuItem;
+        private ToolStripMenuItem emprestimoToolStripMenuItem;
     }
 }

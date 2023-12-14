@@ -9,9 +9,9 @@ namespace IFSPLivraria.App.Models
     public class EditoraModel
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
         public int IdLivro { get; set; }
-        public string NomeLivro { get;set; }
+        public string? Titulo { get;set; }
        
     }
 }

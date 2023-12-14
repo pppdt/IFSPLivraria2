@@ -20,6 +20,7 @@ namespace IFSPLivraria.App.Cadastro
         private readonly IBaseService<Editora> _editoraService;
         private readonly IBaseService<Livro> _livroService;
         private List<EditoraModel>? editoras;
+
         public CadastroEditora(IBaseService<Editora> editoraService, IBaseService<Livro> livroService)
         {
             _editoraService = editoraService;
@@ -31,7 +32,8 @@ namespace IFSPLivraria.App.Cadastro
         {
             cboLivro.ValueMember = "Id";
             cboLivro.DisplayMember = "Titulo";
-            cboLivro.DataSource = _livroService.Get<LivroModel>().ToList();
+            cboLivro.DataSource = _livroService.Get<Livro>().ToList();
+            
         }
 
         private void PreencheObjeto(Editora editora)
@@ -62,7 +64,7 @@ namespace IFSPLivraria.App.Cadastro
                 {
                     var editora = new Editora();
                     PreencheObjeto(editora);
-                    _editoraService.Update<Editora, Editora, EditoraValidator>(editora);
+                    _editoraService.Add<Editora, Editora, EditoraValidator>(editora);
 
                 }
 
@@ -70,7 +72,7 @@ namespace IFSPLivraria.App.Cadastro
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Livraria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -82,7 +84,7 @@ namespace IFSPLivraria.App.Cadastro
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Livraria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -90,7 +92,7 @@ namespace IFSPLivraria.App.Cadastro
         {
             editoras = _editoraService.Get<EditoraModel>(new[] { "Livro" }).ToList();
             dataGridViewConsulta.DataSource = editoras;
-            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewConsulta.Columns["Titulo"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewConsulta.Columns["IdLivro"]!.Visible = false;
         }
 
@@ -98,7 +100,7 @@ namespace IFSPLivraria.App.Cadastro
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
-            cboLivro.SelectedValue = linha?.Cells["NomeLivro"].Value;
+            cboLivro.SelectedValue = linha?.Cells["IdLivro"].Value;
         }
 
     }
