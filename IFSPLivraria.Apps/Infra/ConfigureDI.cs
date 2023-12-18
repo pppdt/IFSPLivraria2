@@ -74,9 +74,9 @@ namespace IFSPLivraria.App.Infra
                     .ForMember(d => d.IdCidade, d => d.MapFrom(x => x.Cidade!.Id));
 
                 config.CreateMap<Livro, Livro>();
-                config.CreateMap<Editora, Editora>()
+                config.CreateMap<Editora, EditoraModel>()
                 .ForMember(d => d.Livro, d => d.MapFrom(x => x.Livro!.Titulo))
-                .ForMember(d => d.Id, d => d.MapFrom(x => x.Livro!.Id));
+                .ForMember(d => d.IdLivro, d => d.MapFrom(x => x.Livro!.Id));
                 /*   config.CreateMap<Grupo, Grupo>();
                   config.CreateMap<Livro, LivroModel>()
                 .ForMember(d => d.Grupo, d => d.MapFrom(x => x.Grupo!.Nome))

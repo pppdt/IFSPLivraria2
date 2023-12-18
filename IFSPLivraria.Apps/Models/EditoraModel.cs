@@ -10,8 +10,8 @@ namespace IFSPLivraria.App.Models
     {
         public int Id { get; set; }
         public string? Nome { get; set; }
-        public int IdLivro { get; set; }
-        public string? Titulo { get;set; }
+        public int? IdLivro { get; set; }
+        public string? Livro { get;set; }
        
     }
 }

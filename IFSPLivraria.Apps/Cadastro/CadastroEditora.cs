@@ -40,10 +40,11 @@ namespace IFSPLivraria.App.Cadastro
         {
             editora.Nome = txtNome.Text;
           
-            if (int.TryParse(cboLivro.SelectedValue.ToString(), out var idGrupo))
+            if (int.TryParse(cboLivro.SelectedValue.ToString(), out var idLivro))
             {
-                var livro = _livroService.GetById<Livro>(idGrupo);
+                var livro = _livroService.GetById<Livro>(idLivro);
                 editora.Livro = livro;
+              //  _editoraService.AttachObject(editora);
             }
         }
 
@@ -57,7 +58,7 @@ namespace IFSPLivraria.App.Cadastro
                     {
                         var editora = _editoraService.GetById<Editora>(id);
                         PreencheObjeto(editora);
-                        _editoraService.Update<Editora, Editora, EditoraValidator>(editora);
+                        editora =  _editoraService.Update<Editora, Editora, EditoraValidator>(editora);
                     }
                 }
                 else
@@ -92,7 +93,7 @@ namespace IFSPLivraria.App.Cadastro
         {
             editoras = _editoraService.Get<EditoraModel>(new[] { "Livro" }).ToList();
             dataGridViewConsulta.DataSource = editoras;
-            dataGridViewConsulta.Columns["Titulo"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           // dataGridViewConsulta.Columns["Titulo"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewConsulta.Columns["IdLivro"]!.Visible = false;
         }
 
