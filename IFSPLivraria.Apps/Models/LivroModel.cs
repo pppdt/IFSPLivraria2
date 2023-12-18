@@ -12,6 +12,8 @@ namespace IFSPLivraria.App.Models
         public string? Titulo { get; set; }
         public string? Autor { get; set; }
         public string? AnoProducao { get; set; }
+        public int? IdEditora { get; set; }
+        public string? Editora { get; set; }
 
     }
 }

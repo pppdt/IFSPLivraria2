@@ -18,11 +18,10 @@ namespace IFSPLivraria.Domain.Entities
             Empl = empl;
         }
 
-
         public DateTime DataEmprestimo { get; set; }
         public DateTime DataDevolucao { get; set; }
-        public Cliente? Cliente { get; set; }
-        public List<Emprestimo_Livro> Empl { get; set; }     
+        public virtual Cliente? Cliente { get; set; }
+        public virtual List<Emprestimo_Livro> Empl { get; set; }     
     }
 
     public class Emprestimo_Livro : BaseEntity<int>
@@ -39,10 +38,10 @@ namespace IFSPLivraria.Domain.Entities
             Emprestimo = emprestimo;
         }
 
-        public Livro? Livro { get; set; }
+        public virtual Livro? Livro { get; set; }
         public int Quantidade { get; set; }
         [JsonIgnore]
-        public Emprestimo? Emprestimo { get; set; }
+        public virtual Emprestimo? Emprestimo { get; set; }
     }
 
 

@@ -36,13 +36,13 @@ namespace IFSPLivraria.App
         {
             Exibeformulario<CadastroLivro>();
         }
-        /*
-        private void emprestimoToolStripMenuItem_Click(object sender, EventArgs e)
+       
+
+         private void emprestimoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Exibeformulario<cadastrEmprestimo>();
+            Exibeformulario<CadastroEmprestimo>();
         }
 
-        */
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.ApplicationExitCall)
@@ -62,6 +62,12 @@ namespace IFSPLivraria.App
             }
         }
 
-     
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.ApplicationExitCall)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

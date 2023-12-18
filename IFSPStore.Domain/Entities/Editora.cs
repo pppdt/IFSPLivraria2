@@ -10,13 +10,12 @@ namespace IFSPLivraria.Domain.Entities
 
         }
 
-        public Editora(int id, string? nome, Livro? livro) : base(id)
+        public Editora(int id, string? nome) : base(id)
         {
             Nome = nome;
-            Livro = livro;
+           
         }
 
         public string? Nome { get; set; }
-        public Livro? Livro { get; set;  }
     }
 }

@@ -22,7 +22,9 @@ namespace IFSPLivraria.Repository.Mapping
 
             builder.HasOne(prop => prop.Cliente);
             //muitos itens ... relacionamento de tabelas
-            builder.HasMany(prop => prop.Empl);
+            builder.HasMany(prop => prop.Empl)
+                .WithOne(prop => prop.Emprestimo)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
 
@@ -40,9 +42,10 @@ namespace IFSPLivraria.Repository.Mapping
                 
             builder.Property(prop => prop.Quantidade)
                 .IsRequired();
-
-
-            builder.HasOne(prop => prop.Emprestimo);
+            
+            builder.HasOne(prop => prop.Emprestimo)
+                .WithMany(prop => prop.Empl)
+                .OnDelete(DeleteBehavior.Cascade); 
         }
 
     }

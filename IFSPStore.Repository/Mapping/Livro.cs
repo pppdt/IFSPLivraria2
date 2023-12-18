@@ -22,6 +22,9 @@ namespace IFSPLivraria.Repository.Mapping
             builder.Property(prop => prop.AnoProducao)
                 .IsRequired()
                 .HasColumnType("varchar(4)");
+
+            //chave
+            builder.HasOne(prop => prop.Editora);
         }
     }
 }

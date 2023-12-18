@@ -59,7 +59,7 @@ namespace IFSPLivraria.App.Infra
             Services.AddTransient<CadastroCidade, CadastroCidade>();
             Services.AddTransient<CadastroLivro, CadastroLivro>();
             Services.AddTransient<CadastroEditora, CadastroEditora>();
-            //Services.AddTransient<CadastroEmprestimo, CadastroEmprestimo>();
+            Services.AddTransient<CadastroEmprestimo, CadastroEmprestimo>();
            
 
 
@@ -73,10 +73,10 @@ namespace IFSPLivraria.App.Infra
                     .ForMember(d => d.Cidade, d => d.MapFrom(x => $"{x.Cidade!.Nome}/{x.Cidade!.Estado}"))
                     .ForMember(d => d.IdCidade, d => d.MapFrom(x => x.Cidade!.Id));
 
-                config.CreateMap<Livro, Livro>();
-                config.CreateMap<Editora, EditoraModel>()
-                .ForMember(d => d.Livro, d => d.MapFrom(x => x.Livro!.Titulo))
-                .ForMember(d => d.IdLivro, d => d.MapFrom(x => x.Livro!.Id));
+                config.CreateMap<Editora, EditoraModel>();
+                config.CreateMap<Livro, LivroModel>()
+                .ForMember(d => d.Editora, d => d.MapFrom(x => x.Editora!.Nome))
+                .ForMember(d => d.IdEditora, d => d.MapFrom(x => x.Editora!.Id));
                 /*   config.CreateMap<Grupo, Grupo>();
                   config.CreateMap<Livro, LivroModel>()
                 .ForMember(d => d.Grupo, d => d.MapFrom(x => x.Grupo!.Nome))

@@ -31,7 +31,6 @@ namespace IFSPLivraria.Repository.Repository
 
             Validate(entity, Activator.CreateInstance<TValidator>());
 
-            _baseRepository.ClearChangeTracker();
             _baseRepository.Insert(entity);
 
             var outputModel = _mapper.Map<TOutputModel>(entity);
@@ -41,7 +40,6 @@ namespace IFSPLivraria.Repository.Repository
 
         public void Delete(int id)
         {
-
             _baseRepository.ClearChangeTracker();
             _baseRepository.Delete(id);
         }
@@ -78,7 +76,7 @@ namespace IFSPLivraria.Repository.Repository
 
             Validate(entity, Activator.CreateInstance<TValidator>());
 
-            _baseRepository.ClearChangeTracker();
+            //_baseRepository.ClearChangeTracker();
             _baseRepository.Update(entity);
 
             var outputModel = _mapper.Map<TOutputModel>(entity);
@@ -93,7 +91,5 @@ namespace IFSPLivraria.Repository.Repository
 
             validator.ValidateAndThrow(obj);
         }
-
-
     }
 }

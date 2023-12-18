@@ -18,8 +18,7 @@ namespace IFSPLivraria.Repository.Mapping
             builder.Property(prop => prop.Nome)
                 .IsRequired()
                 .HasColumnType("varchar(100)");
-            //chave
-            builder.HasOne(prop => prop.Livro);
+           
 
         }
     }

@@ -3,49 +3,28 @@ using IFSPLivraria.App.Models;
 using IFSPLivraria.Domain.Base;
 using IFSPLivraria.Domain.Entities;
 using IFSPLivraria.Service.Validators;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace IFSPLivraria.App.Cadastro
 {
     public partial class CadastroEditora : CadastroBase
     {
         private readonly IBaseService<Editora> _editoraService;
-        private readonly IBaseService<Livro> _livroService;
+
         private List<EditoraModel>? editoras;
 
-        public CadastroEditora(IBaseService<Editora> editoraService, IBaseService<Livro> livroService)
+        public CadastroEditora(IBaseService<Editora> editoraService)
         {
             _editoraService = editoraService;
-            _livroService = livroService;
             InitializeComponent();
-            CarregarCombo();
+           
         }
-        private void CarregarCombo()
-        {
-            cboLivro.ValueMember = "Id";
-            cboLivro.DisplayMember = "Titulo";
-            cboLivro.DataSource = _livroService.Get<Livro>().ToList();
-            
-        }
+ 
 
         private void PreencheObjeto(Editora editora)
         {
             editora.Nome = txtNome.Text;
           
-            if (int.TryParse(cboLivro.SelectedValue.ToString(), out var idLivro))
-            {
-                var livro = _livroService.GetById<Livro>(idLivro);
-                editora.Livro = livro;
-              //  _editoraService.AttachObject(editora);
-            }
         }
 
         protected override void Salvar()
@@ -91,18 +70,18 @@ namespace IFSPLivraria.App.Cadastro
 
         protected override void CarregaGrid()
         {
-            editoras = _editoraService.Get<EditoraModel>(new[] { "Livro" }).ToList();
+            editoras = _editoraService.Get<EditoraModel>().ToList();
             dataGridViewConsulta.DataSource = editoras;
-           // dataGridViewConsulta.Columns["Titulo"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewConsulta.Columns["IdLivro"]!.Visible = false;
+            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
-            cboLivro.SelectedValue = linha?.Cells["IdLivro"].Value;
         }
 
     }
+
 }
+
